@@ -1,0 +1,90 @@
+﻿CREATE PROCEDURE USP_CRUDOperations_Employee
+(
+@EmpID INT
+,@Name VARCHAR(100) = NULL
+,@Address VARCHAR(300) = NULL
+,@Mobile VARCHAR(15) = NULL
+,@EmailID VARCHAR(15) = NULL
+,@Department VARCHAR(300) = NULL
+,@Salary INT = 0
+,@Operation VARCHAR(20) = NULL
+)
+AS
+BEGIN
+
+	/*
+		-------- Declaring Variables for Testing --------
+
+		DECLARE		@EmpID INT = 1
+					,@Name VARCHAR(100) = 'Prabu Rajan'
+					,@Address VARCHAR(300) = 'ABC'
+					,@Mobile VARCHAR(15) = 1234567890
+					,@EmailID VARCHAR(15) = 'ABC@gmail.com'
+					,@Department VARCHAR(300) = 'IT'
+					,@Salary INT = 10000
+					,@Operation VARCHAR(20) = 'INSERT'
+
+	*/
+
+	IF(@Operation = 'Create')
+	BEGIN
+			INSERT INTO Employee([Name],[Address],[Mobile],[EmailID],[Department],[Salary])
+			SELECT @Name,@Address,@Mobile,@EmailID,@Department,@Salary
+
+			IF (@@ROWCOUNT > 0)
+			BEGIN
+				SELECT 'Inserted Employee Record successfully!' AS Result
+			END
+
+	END
+
+
+	ELSE IF(@Operation = 'Update')
+	BEGIN
+			UPDATE Employee SET [Name]=@Name, [Address]=@Address, [Mobile]=@Mobile, [EmailID]=@EmailID,
+								[Department]=@Department, [Salary]=@Salary
+			WHERE EmpID = @EmpID
+
+			IF (@@ROWCOUNT > 0)
+			BEGIN
+				SELECT 'Updated Employee Record successfully!' AS Result
+			END
+
+
+	END
+
+
+	ELSE IF(@Operation = 'Delete')
+	BEGIN
+			DELETE FROM Employee WHERE EmpID = @EmpID
+
+			IF (@@ROWCOUNT > 0)
+			BEGIN
+				SELECT 'Deleted Employee Record successfully!' AS Result
+			END
+
+
+	END
+
+
+	ELSE IF(@Operation = 'Select')
+	BEGIN
+			SELECT EmpID,[Name],[Address],Mobile,EmailID,Department,Salary 
+			FROM Employee 
+			WHERE EmpID = @EmpID
+			
+	END
+
+
+	ELSE IF(@Operation = 'SelectAll')
+	BEGIN
+			SELECT EmpID,[Name],[Address],Mobile,EmailID,Department,Salary 
+			FROM Employee
+			
+	END
+
+
+	ELSE
+		SELECT 'Something Went Wrong!!!' AS Result
+
+END

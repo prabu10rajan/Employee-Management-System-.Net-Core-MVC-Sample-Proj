@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Employee] (
+    [EmpID]      INT           IDENTITY (1, 1) NOT NULL,
+    [Name]       VARCHAR (100) NULL,
+    [Address]    VARCHAR (300) NULL,
+    [Mobile]     VARCHAR (10)  NULL,
+    [EmailID]    VARCHAR (300) NULL,
+    [Department] VARCHAR (100) NULL,
+    [Salary]     INT           NULL,
+    PRIMARY KEY CLUSTERED ([EmpID] ASC)
+);
