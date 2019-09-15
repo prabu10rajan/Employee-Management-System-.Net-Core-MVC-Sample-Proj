@@ -1,0 +1,64 @@
+﻿@model SampleEmployeeMVC.Models.Employee;
+@{
+    ViewData["Title"] = "DeleteEmplopyee";
+}
+
+
+<h3>Are you sure you want to delete this Employee?</h3>
+@using (Html.BeginForm())
+{
+    <br />
+    <fieldset>
+        <legend>Employee Details</legend>
+        @Html.HiddenFor(model => model.EmployeeID)
+        <div>
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Address)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.EmailID)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.EmailID)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Department)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Department)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Salary)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Salary)
+        </div>
+    </fieldset>
+    <br />
+    <p>
+        <input class="btn btn-danger" onclick="return confirm('Are you sure you want delete');" type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Home")
+    </p>
+}
+
+<script type="text/javascript">
+    var result = '@(TempData["Result"])';
+    if (result != '' && result != null) {
+        alert(result);
+        window.location.href = "/Employee/Home";
+    }
+</script>

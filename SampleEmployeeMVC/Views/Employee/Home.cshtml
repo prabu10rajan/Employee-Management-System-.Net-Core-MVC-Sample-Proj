@@ -1,0 +1,70 @@
+﻿@model SampleEmployeeMVC.Models.Employee
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<h2>Welcome to a ASP.Net Core Example!</h2>
+<br />
+<div>
+    <h3><u>Sample Employee Management System</u></h3>
+    <p>Here we are about to perform CRUD operations on Employee's data.</p>
+</div>
+<br />
+
+<p>List of all Employee Details :-</p>
+<table class="table table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.AllEmployees)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateEmployee", new { employeeID = item.EmployeeID }) |
+                @Html.ActionLink("Details", "ReadEmployee", new { employeeID = item.EmployeeID }) |
+                @Html.ActionLink("Delete", "DeleteEmployee", new { employeeID = item.EmployeeID })
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Create New Employee", "CreateEmployee")
+</p>

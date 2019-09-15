@@ -1,0 +1,72 @@
+﻿@model SampleEmployeeMVC.Models.Employee;
+@{
+    ViewData["Title"] = "UpdateEmployee";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <br />
+    <fieldset>
+        <legend>Employee Details</legend>
+        @Html.HiddenFor(model => model.EmployeeID)
+        <div>
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Mobile)
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.EmailID)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.EmailID)
+            @Html.ValidationMessageFor(model => model.EmailID)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Department)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Department)
+            @Html.ValidationMessageFor(model => model.Department)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Salary)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Salary)
+            @Html.ValidationMessageFor(model => model.Salary)
+        </div>
+        <br />
+        <p>
+            <input class="btn btn-warning" type="submit" value="Update" />
+            @Html.ActionLink("Back to List", "Home")
+        </p>
+    </fieldset>
+}
+
+<script type="text/javascript">
+    var result = '@(TempData["Result"])';
+    if (result != '' && result != null) {
+        alert(result);
+        window.location.href = "/Employee/Home";
+    }
+</script>
+
+

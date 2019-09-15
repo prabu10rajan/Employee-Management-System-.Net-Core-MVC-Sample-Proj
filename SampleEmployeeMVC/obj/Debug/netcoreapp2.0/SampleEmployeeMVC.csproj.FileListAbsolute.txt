@@ -1,0 +1,11 @@
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\bin\Debug\netcoreapp2.0\SampleEmployeeMVC.deps.json
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\bin\Debug\netcoreapp2.0\SampleEmployeeMVC.runtimeconfig.json
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\bin\Debug\netcoreapp2.0\SampleEmployeeMVC.runtimeconfig.dev.json
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\bin\Debug\netcoreapp2.0\SampleEmployeeMVC.dll
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\bin\Debug\netcoreapp2.0\SampleEmployeeMVC.pdb
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.csprojResolveAssemblyReference.cache
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.csproj.CoreCompileInputs.cache
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.AssemblyInfoInputs.cache
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.AssemblyInfo.cs
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.dll
+D:\Sample Projects\C#\SampleEmployeeMVC\SampleEmployeeMVC\obj\Debug\netcoreapp2.0\SampleEmployeeMVC.pdb

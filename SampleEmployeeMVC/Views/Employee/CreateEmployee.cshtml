@@ -1,0 +1,74 @@
+﻿@model SampleEmployeeMVC.Models.Employee;
+@{
+    ViewData["Title"] = "InsertEmployee";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <br />
+    <fieldset>
+        <legend>Create Employee</legend>
+        <div>
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Mobile)
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.EmailID)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.EmailID)
+            @Html.ValidationMessageFor(model => model.EmailID)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Department)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Department)
+            @Html.ValidationMessageFor(model => model.Department)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Salary)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Salary)
+            @Html.ValidationMessageFor(model => model.Salary)
+        </div>
+        <br />
+        <p>
+            <input class="btn btn-success" type="submit" value="Create" />
+            @Html.ActionLink("Back to List", "Home")
+        </p>
+    </fieldset>
+}
+
+<script type="text/javascript">
+    debugger;
+    // Better to keep a Bootstrap popup than jAlert!
+
+    var result = '@(TempData["Result"])';
+    if (result != '' && result != null) {
+        alert(result);
+        window.location.href = "/Employee/Home";
+    }
+</script>
